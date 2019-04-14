@@ -65,7 +65,7 @@ class TestRailReporter extends _reporter.default {
 	this._passes++;
 	this._out.push(test.title + ': pass');
 	let caseIds = titleToCaseIds(test.title);
-	let suiteId = titleToSuiteId(test.fullTitle) || this.options.suiteId;
+	let suiteId = this.options.suiteId;
 	if (caseIds.length > 0) {
 		let results = caseIds.map(caseId => {
 			return {
@@ -83,7 +83,7 @@ class TestRailReporter extends _reporter.default {
 	this._fails++;
 	this._out.push(test.title + ': fail');
 	let caseIds = titleToCaseIds(test.title);
-	let suiteId = titleToSuiteId(test.fullTitle) || this.options.suiteId;
+	let suiteId = this.options.suiteId;
 	if (caseIds.length > 0) {
 		let results = caseIds.map(caseId => {
 			return {
